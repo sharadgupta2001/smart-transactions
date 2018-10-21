@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<body>
+<div>
+<div class="form-style-3" align="left">
+<form>
+<fieldset><legend>Visualize Transactions</legend>
+<label for="field1"><span>Start Date <span class="required">*</span></span><input type="date" id="fromDate" class="input-field" value="2018-01-01"/></label>
+<label for="field2"><span>End Date <span class="required">*</span></span><input type="date" id="toDate" class="input-field"  value="2018-02-01" /></label>
+<label for="field3"><span>Token <span class="required">*</span></span><input type="text" class="input-field" id="authToken" /></label>
+<label><center><input type="button" value="Visualize" onclick="visualize()"></center></label>
+</fieldset>
+</form>
+</div>
+<br/>
+</div>
+<div id="loader_container"></div>
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
