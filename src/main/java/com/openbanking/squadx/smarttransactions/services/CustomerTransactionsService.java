@@ -4,7 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import com.jayway.jsonpath.ParseContext;
 import com.openbanking.squadx.smarttransactions.client.SquadXClient;
-import com.openbanking.squadx.smarttransactions.model.DrillDownTransactionsHistory;
+import com.openbanking.squadx.smarttransactions.model.TransactionsHistory;
 import com.openbanking.squadx.smarttransactions.model.TransactionAnalysis;
 import com.openbanking.squadx.smarttransactions.model.TransactionHistory;
 import com.openbanking.squadx.smarttransactions.model.TransactionsRequest;
@@ -30,7 +30,7 @@ public class CustomerTransactionsService implements CustomerTransactions {
 	}
 	
 	@Override
-	public Single<DrillDownTransactionsHistory> drillDownTransactions(HttpServletRequest httpReq, TransactionsRequest transactionsRequest) {
-		return squadXClient.discoverTransactions(httpReq, transactionsRequest).map(it-> DrillDownTransactionsHistory.from(it,parseContext));
+	public Single<TransactionsHistory> drillDownTransactions(HttpServletRequest httpReq, TransactionsRequest transactionsRequest) {
+		return squadXClient.discoverTransactions(httpReq, transactionsRequest).map(it-> TransactionsHistory.from(it,parseContext));
 	}
 }

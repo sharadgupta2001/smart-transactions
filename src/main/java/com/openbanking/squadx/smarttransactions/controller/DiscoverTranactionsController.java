@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.async.DeferredResult;
 
-import com.openbanking.squadx.smarttransactions.model.DrillDownTransactionsHistory;
+import com.openbanking.squadx.smarttransactions.model.TransactionsHistory;
 import com.openbanking.squadx.smarttransactions.model.TransactionAnalysis;
 import com.openbanking.squadx.smarttransactions.model.TransactionsRequest;
 import com.openbanking.squadx.smarttransactions.services.CustomerTransactions;
@@ -33,7 +33,7 @@ public class DiscoverTranactionsController {
 	}
 
 	@PostMapping(value = "/drill-down-transactions", consumes = "application/json")
-	public DeferredResult<DrillDownTransactionsHistory> drillDownTransactions(HttpServletRequest request,
+	public DeferredResult<TransactionsHistory> drillDownTransactions(HttpServletRequest request,
 			@RequestBody TransactionsRequest transactionsRequest) {
 		return Executors.toDeferred(customerTransactions.drillDownTransactions(request, transactionsRequest));
 	}
